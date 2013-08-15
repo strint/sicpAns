@@ -1,0 +1,13 @@
+1 ]=> (load "/media/doc/lisp/c1e6b.scm")
+
+;Loading "c1e6b.scm"... done
+;Value: square
+
+1 ]=> (xysqrt 4)
+
+;Aborting!: maximum recursion depth exceeded
+
+1 ]=> (xysqrt 9)
+
+;Aborting!: maximum recursion depth exceeded
+
