@@ -4,5 +4,4 @@
  * 北大SICP课主页 http://www.math.pku.edu.cn/teachers/qiuzy/progtech/
 
 ####文件命名规则
- * 1. c is short for chapter
- * 2. e is short for exercise
+ * "number-description"，number的第一个数字表示章，后三位表示在该章的题号，description是对题目关键字
