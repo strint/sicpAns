@@ -1,4 +1,4 @@
-###SICP(大型程序设计方法) 习题练习
+###SICP 习题练习
 
 ####相关资源
  * 北大SICP课主页 http://www.math.pku.edu.cn/teachers/qiuzy/progtech/
