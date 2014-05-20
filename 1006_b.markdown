@@ -58,7 +58,7 @@
 
 运行结果：
 
-    <img src="1006_b_recursion_depth_test.png">
+<img src="1006_b_recursion_depth_test.png">
 
 #### Analyzing
 在Win7、64位系统、4G内存下执行了近5个小时，递归深度已经达到了1亿多次，但是丝毫没有要停的意思，只有`Abort`了...看来这个测scheme recursion depth的方法不太可行。
