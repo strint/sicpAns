@@ -22,7 +22,7 @@
       (* x x))
   
     ;num 表示初始值，test-times表示进行test-times次测试,每次测试将num平方作为新的num
-    ;每进行一次测试，先显示num的平方，然后显示num最后显示xysqrt对num的平方进行的开方操作
+    ;每进行一次测试，先显示num的平方，然后显示num，最后显示xysqrt对num的平方进行的开方操作
     (define (sqrt-test num test-times)
       (begin (display (* num num)) (newline) (display num) (newline) (display (xysqrt (* num num))) (newline) (newline)
              (if (> test-times 0)
@@ -91,7 +91,7 @@
     Interrupt option (? for help): ;Quit!
  
 # Analyzing
-## Test of very small nummbers
+## Test of very small numbers
 发现当要计算的平方根 小于0.01之后，所计算出的平方根都是0.03+，这是因为虽然计算的平方根相对于原数误差很大但是误差小于`good-enough?`中设定的0.01（注意这里是平方时的误差，见下面的计算）
 
     1 ]=> (- 0.0001 (* 0.032 0.032))
@@ -99,9 +99,32 @@
 
 ## Test of very large numbers
 发现计算5的8次方开始，后面的小数位丢失了；计算5的32次方时，程序计算时间过长。可能的原因是由于精度限制，计算的结果的小数位被省略，导致平方后的误差始终大于0.001，因此程序无法停止。
+### Codes:1007_big_number.scm
+每次递归的输出依次为：递归深度、当前计算的平方根、计算出的平方根的平方与输入的原平方数的差值。
+    (define (xysqrt in count)
+      (sqrt-iter 1.0 in count))
+    
+    (define (sqrt-iter guess x count)
+      (begin (display count) (newline) (display guess) (newline) (display (- (square guess) x)) (newline) (newline)
+             (if (good-enough? guess x)
+                     guess
+                     (sqrt-iter (improve guess x) x (+ count 1)))))
+    
+    (define (improve g b)
+      (/ (+ g
+            (/ b g))
+         2.0))
+    
+    (define (good-enough? c d)
+      (< (abs (- (square c)
+                 d))
+         0.001))
+    
+    (define (square x)
+      (* x x))
 
 ### Running
-使用上面的代码测试了5的32次方的计算，发现由于精度的限制
+使用上面的代码测试了5的32次方的计算，发现由于精度的限制，大数使用科学计算法时，计算出来的平方根的底数的小数位最长为16位，而指数稳定在22位，平方后是44位，这样计算出的平方根的后，低位的约28（44-16）位都为0，但输入的低位的28位的最高为是7，这样导致误差始终至少约为7*10^27，所以递归无法停止，并且误差不能无限减小。从运行结果也可以看出，平方根和误差在一定次数的递归后都不再变化。
 
     1 ]=> (load "1007_big_number.scm")
     
