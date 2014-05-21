@@ -1,101 +1,101 @@
 #Codes
 
-  (define (xysqrt in)
-    (sqrt-iter 1.0 in))
-  
-  (define (sqrt-iter guess x)
-    (if (good-enough? guess x)
-        guess
-        (sqrt-iter (improve guess x) x)))
-  
-  (define (improve g b)
-    (/ (+ g
-          (/ b g))
-       2.0))
-  
-  (define (good-enough? c d)
-    (< (abs (- (square c)
-               d))
-       0.001))
-  
-  (define (square x)
-    (* x x))
+    (define (xysqrt in)
+      (sqrt-iter 1.0 in))
+    
+    (define (sqrt-iter guess x)
+      (if (good-enough? guess x)
+          guess
+          (sqrt-iter (improve guess x) x)))
+    
+    (define (improve g b)
+      (/ (+ g
+            (/ b g))
+         2.0))
+    
+    (define (good-enough? c d)
+      (< (abs (- (square c)
+                 d))
+         0.001))
+    
+    (define (square x)
+      (* x x))
   
   ;num 表示初始值，test-times表示进行test-times次测试,每次测试将num平方作为新的num
   ;每进行一次测试，先显示num的平方，然后显示num最后显示xysqrt对num的平方进行的开方操作
-  (define (sqrt-test num test-times)
-    (begin (display (* num num)) (newline) (display num) (newline) (display (xysqrt (* num num))) (newline) (newline)
-           (if (> test-times 0)
-             (sqrt-test (* num num) (- test-times 1))
-             num)))
+    (define (sqrt-test num test-times)
+      (begin (display (* num num)) (newline) (display num) (newline) (display (xysqrt (* num num))) (newline) (newline)
+             (if (> test-times 0)
+               (sqrt-test (* num num) (- test-times 1))
+               num)))
    
 # Running
 ## Test of very small numbers
-  1 ]=> (load "1007.scm")
-  
-  ;Loading "1007.scm"... done
-  ;Value: sqrt-test
-  
-  1 ]=> (sqrt-test 0.1 5)
-  1.0000000000000002e-2
-  .1
-  .10032578510960607
-  
-  1.0000000000000005e-4
-  1.0000000000000002e-2
-  .03230844833048122
-  
-  1.0000000000000008e-8
-  1.0000000000000005e-4
-  .03125010656242753
-  
-  1.0000000000000017e-16
-  1.0000000000000008e-8
-  .03125000000000106
-  
-  1.0000000000000035e-32
-  1.0000000000000017e-16
-  .03125
-  
-  1.0000000000000069e-64
-  1.0000000000000035e-32
-  .03125
-  
-  ;Value: 1.0000000000000035e-32
+    1 ]=> (load "1007.scm")
+    
+    ;Loading "1007.scm"... done
+    ;Value: sqrt-test
+    
+    1 ]=> (sqrt-test 0.1 5)
+    1.0000000000000002e-2
+    .1
+    .10032578510960607
+    
+    1.0000000000000005e-4
+    1.0000000000000002e-2
+    .03230844833048122
+    
+    1.0000000000000008e-8
+    1.0000000000000005e-4
+    .03125010656242753
+    
+    1.0000000000000017e-16
+    1.0000000000000008e-8
+    .03125000000000106
+    
+    1.0000000000000035e-32
+    1.0000000000000017e-16
+    .03125
+    
+    1.0000000000000069e-64
+    1.0000000000000035e-32
+    .03125
+    
+    ;Value: 1.0000000000000035e-32
 
 ## Test of very large numbers
-  1 ]=> (sqrt-test 5 5)
-  25
-  5
-  5.000023178253949
-  
-  625
-  25
-  25.000000063076968
-  
-  390625
-  625
-  625.0000000051539
-  
-  152587890625
-  390625
-  390625.
-  
-  23283064365386962890625
-  152587890625
-  152587890625.
-  
-  542101086242752217003726400434970855712890625
-  23283064365386962890625
-  ^C
-  Interrupt option (? for help): ;Quit!
+    1 ]=> (sqrt-test 5 5)
+    25
+    5
+    5.000023178253949
+    
+    625
+    25
+    25.000000063076968
+    
+    390625
+    625
+    625.0000000051539
+    
+    152587890625
+    390625
+    390625.
+    
+    23283064365386962890625
+    152587890625
+    152587890625.
+    
+    542101086242752217003726400434970855712890625
+    23283064365386962890625
+    ^C
+    Interrupt option (? for help): ;Quit!
  
 # Analyzing
 ## Test of very small nummbers
 发现当要计算的平方根 小于0.01之后，所计算出的平方根都是0.03+，这是因为虽然计算的平方根相对于原数误差很大但是误差小于`good-enough?`中设定的0.01（注意这里是平方时的误差，见下面的计算）
-  1 ]=> (- 0.0001 (* 0.032 0.032))
-  
-  ;Value: -9.239999999999999e-4
+    1 ]=> (- 0.0001 (* 0.032 0.032))
+    
+    ;Value: -9.239999999999999e-4
 
 ## Test of very large numbers
 发现计算5的8次方开始，后面的小数位丢失了；计算5的32次方时，程序计算时间过长。原因不明。
