@@ -20,7 +20,7 @@
   (* x x))
 
 (define (sqrt-test num test-times)
-  (begin (display num) (display (xysqrt num)) (newline)
+  (begin (display num) (newline) (display (* num num)) (display (xysqrt (* num num))) (newline) (newline)
          (if (> test-times 0)
            (sqrt-test (* num num) (- test-times 1))
            num)))
