@@ -21,8 +21,8 @@
     (define (square x)
       (* x x))
   
-  ;num 表示初始值，test-times表示进行test-times次测试,每次测试将num平方作为新的num
-  ;每进行一次测试，先显示num的平方，然后显示num最后显示xysqrt对num的平方进行的开方操作
+    ;num 表示初始值，test-times表示进行test-times次测试,每次测试将num平方作为新的num
+    ;每进行一次测试，先显示num的平方，然后显示num最后显示xysqrt对num的平方进行的开方操作
     (define (sqrt-test num test-times)
       (begin (display (* num num)) (newline) (display num) (newline) (display (xysqrt (* num num))) (newline) (newline)
              (if (> test-times 0)
@@ -93,8 +93,8 @@
 # Analyzing
 ## Test of very small nummbers
 发现当要计算的平方根 小于0.01之后，所计算出的平方根都是0.03+，这是因为虽然计算的平方根相对于原数误差很大但是误差小于`good-enough?`中设定的0.01（注意这里是平方时的误差，见下面的计算）
+
     1 ]=> (- 0.0001 (* 0.032 0.032))
-    
     ;Value: -9.239999999999999e-4
 
 ## Test of very large numbers
