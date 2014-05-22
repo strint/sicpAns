@@ -11,6 +11,7 @@
         (/ b g))
      2.0))
 
+;使用前后两次计算结果的变化率不超过0.0001来作为证明计算结果达到精度的条件
 (define (good-enough? guess pre-guess)
   (< (/ (abs (- guess pre-guess))
         pre-guess)
