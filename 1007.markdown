@@ -1,4 +1,5 @@
-#Codes
+# Test very small and very large numbers
+## Codes
 
     ;1007.scm
 
@@ -31,8 +32,8 @@
                (sqrt-test (* num num) (- test-times 1))
                num)))
    
-# Running
-## Test of very small numbers
+## Running
+### Test of very small numbers
 
     1 ]=> (load "1007.scm")
     
@@ -71,7 +72,7 @@
     1 ]=> (- 0.0001 (* 0.032 0.032))
     ;Value: -9.239999999999999e-4
 
-## Test of very large numbers
+### Test of very large numbers
     1 ]=> (sqrt-test 5 5)
     25
     5
