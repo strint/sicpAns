@@ -1,2 +1,3 @@
-# vim backup files
-*.swp
+# vim
+*~
+*.*.sw*
