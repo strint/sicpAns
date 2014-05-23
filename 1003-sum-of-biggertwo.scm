@@ -1,9 +1,12 @@
-(sum-of-biggertwo 1 2 3)
+;1003-sum-of-biggertwo.scm
+(define (sum-of-biggertwo a b c)
+  (- (+ a b c)
+     (little a
+             (little b c))))
+
+(define (little x y)
+  (if (< x y)
+    x
+    y))
 
 
-
-ds
-sd
-
-
-ddsafdskl
