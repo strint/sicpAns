@@ -32,7 +32,7 @@ Substitution process:
  
     9
 
-这是一个recursive process.
+替换的过程构成了`a chain of deferred operations`，所以这是一个recursive process.
 
 ## Code B
 
@@ -57,5 +57,5 @@ Substitution process:
 
     9
 
-这是一个iterative process.
+替换的过程中，每一步的状态都可以被2个`state variable`所记录，所以这是一个iterative process.
 
