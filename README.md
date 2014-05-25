@@ -1,3 +1,6 @@
 ###SICP 习题练习
+> "A man who knows the price of everything and the value of nothing."(Oscar Wilde).
+> "Lisp programmers knows the value of everything but the cost of nothing."(Alan Perlis)
+
 * *SICP*: http://mitpress.mit.edu/sicp/
 * "number_description"，number的第一个数字表示章，后三位表示在该章的题号，description是题目的关键字
