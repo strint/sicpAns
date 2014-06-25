@@ -1,0 +1,16 @@
+(define (mlt a b)
+  (m a b 0))
+
+(define (m a b c)
+  (define (double x)
+    (* x 2))
+  (define (halve x)
+    (/ x 2))
+  (define (even x)
+    (= (remainder x 2) 0))
+  (if (= b 1)
+    (+ a c) 
+    (if (even b)
+      (m (double a) (halve b) c)
+      (m a (- b 1) (+ a c)))))
+          
