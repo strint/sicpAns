@@ -212,7 +212,7 @@ time:11.660000000000025;time-next:7.269999999999982;time/time-next:1.60385144429
 100000000000097
 time:11.719999999999999;time-next:7.289999999999992;time/time-next:1.6076817558299055
 ```
-We can see that most of the time time/time-next is less than 2(about 1.6, 1/1.6=0.625).
+The timed codes blocks is as follows:
 ```
 (define (timed-prime-test-next n)
   (start-prime-test-next n (runtime)))
@@ -236,11 +236,12 @@ We can see that most of the time time/time-next is less than 2(about 1.6, 1/1.6=
     3
     (+ x 2)))
 ```
+We can see that most of the time time/time-next is less than 2(about 1.6, 1/1.6=0.625).
 
 ### Refine `next`
 #### Remove if in next
 ##### Codes1
-remove `if`
+Remove `if` in procedure and set test-divisor to start frome 3 because the number to be test here has been checked to be a prime before.
 ```
 (define (smallest-divisor-next n) (find-divisor-next n 3))
  
@@ -537,4 +538,4 @@ time:11.769999999999982;time-next:5.92999999999995;time/time-next:1.984822934232
 100000000000097
 time:11.840000000000032;time-next:5.949999999999932;time/time-next:1.9899159663865829
 ```
-We can see the ratio is refined to 2 when remove `next`.So the new procedure `next` that can make the `prime?` to check only half of steps as before but add add quite a lot of cost beacuse invoke a new procedure and the procedure use a `if`.
+We can see the ratio is refined to 2 when remove `next`.So the new procedure `next` that can make the `prime?` to check only half of steps as before but add quite a lot of cost beacuse invoke a new procedure and the procedure use a `if`.
