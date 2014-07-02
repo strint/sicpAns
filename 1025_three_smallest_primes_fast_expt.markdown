@@ -72,3 +72,5 @@ Is she correct? Would this procedure serve as well for our fast prime tester? Ex
 100043***.8100000000000023^C
 ```
 It is so slow to use fast-expt to compute expmod.
+
+
