@@ -75,7 +75,7 @@ It is so slow to use fast-expt to compute expmod.
 
 ```scheme
 (define (expmod base expo m) ;expmod(base^expo) = O(log(expo)) + O(remainder(base^expo)) = O(log(expo)) + O(expo) = O(expo)
-  (remainder (fast-expt base expo) m)) ; remainder(base^expo, m) = O(expo), maybe the time complexity of remainder is larger because  base^expo is quite a large number.
+  (remainder (fast-expt base expo) m)) ; remainder(base^expo, m) = O(expo) (Algorithm D in 4.3.1 of Knuth's book "The Art of Computer Programming" (Volume 2) performs any long division in O(m) steps,http://math.stackexchange.com/questions/320420/time-complexity-of-a-modulo-operation) maybe the time complexity of remainder is larger because  base^expo is quite a large number.
 (define (fast-expt b n) ;fast-expt(expo)=O(log(expo))
   (cond ((= n 0) 1)
         ((even? n) (square (fast-expt b (/ n 2))))
