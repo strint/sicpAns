@@ -81,7 +81,7 @@ It is so slow to use fast-expt to compute expmod.
         ((even? n) (square (fast-expt b (/ n 2))))
         (else (* b (fast-expt b (- n 1))))))
 ```
-```
+```scheme
 (define (expmod base expo m) ; expmod(base^expo) = remainder(square(expmod(base^(expo/2)))) = O(log(expo)), this is very fast.
   (cond ((= expo 0) 1)
         ((even? expo) (remainder (square
