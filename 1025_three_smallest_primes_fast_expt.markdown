@@ -73,4 +73,20 @@ Is she correct? Would this procedure serve as well for our fast prime tester? Ex
 ```
 It is so slow to use fast-expt to compute expmod.
 
-
+```scheme
+(define (expmod base expo m) ;expmod(base^expo) = O(log(expo)) + O(remainder(base^expo)) = O(log(expo)) + O(expo) = O(expo)
+  (remainder (fast-expt base expo) m)) ; remainder(base^expo, m) = O(expo), maybe the time complexity of remainder is larger because  base^expo is quite a large number.
+(define (fast-expt b n) ;fast-expt(expo)=O(log(expo))
+  (cond ((= n 0) 1)
+        ((even? n) (square (fast-expt b (/ n 2))))
+        (else (* b (fast-expt b (- n 1))))))
+```
+```
+(define (expmod base expo m) ; expmod(base^expo) = remainder(square(expmod(base^(expo/2)))) = O(log(expo)), this is very fast.
+  (cond ((= expo 0) 1)
+        ((even? expo) (remainder (square
+                                  (expmod base (/ expo 2) m))
+                                m))
+        (else (remainder (* base (expmod base (- expo 1) m))
+                         m))))
+```
