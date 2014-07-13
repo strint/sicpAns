@@ -39,4 +39,10 @@ Exercise 1.31.b.
 1 ]=> (pi 100000)
 
 ;Value: 3.1416083612781764
+
+1 ]=> (pi 1000000)
+^C
+Interrupt option (? for help): 
+;Up!
 ```
+It did get faster when calculute (pi 100000), but still too slow to compute (pi 1000000) which I don't understand why.
