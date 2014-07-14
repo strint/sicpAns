@@ -1,0 +1,12 @@
+(define (cont-frac-i n d k)
+  (define (cf-iter2 i k-to-i)
+    (if (> i 1)
+      (cf-iter2 (- i 1) (/ (n i) (- (d i) k-to-i)))
+      k-to-i))
+  (cf-iter2 k 0))
+
+(define (tan-cf x k)
+  (/ (cont-frac-i (lambda (i) (* x x))
+                  (lambda (i) (- (* 2 i) 1)) 
+                  k)
+     x))
