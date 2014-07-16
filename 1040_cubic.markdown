@@ -35,7 +35,7 @@ Exercise 1.40.
 ```
 
 ## Running
-``
+```
 1 ]=> (zero-cubic 0 0 27)
 
 ;Value: -2.9999999999999836
