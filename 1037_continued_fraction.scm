@@ -23,9 +23,9 @@
 (define (cont-frac-i n d k)
   (define (cf-iter2 i k-to-i)
     (if (> i 1)
-      (cf-iter2 (- i 1) (/ (n i) (+ (d i) k-to-i)))
+      (cf-iter2 (- i 1) (/ (n (- i 1)) (+ (d (- i 1)) k-to-i)))
       k-to-i))
-  (cf-iter2 k 0))
+  (cf-iter2 (+ k 1) 0))
 
 (define (test-i k)
   (let ((g (/ 1 (/ (+ 1 (sqrt 5)) 2))))
