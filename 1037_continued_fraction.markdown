@@ -47,12 +47,12 @@ Exercise 1.37.
 ## Running
 ```
 1 ]=> (test 1)
-11
+10
 ;Unspecified return value
 
 1 ]=> (test-i 1)
-11
+10
 ;Unspecified return value
 ```
-k equals 11 to get an approximation that is accurate to 4 decimal places.
+k equals 10 to get an approximation that is accurate to 4 decimal places.
 

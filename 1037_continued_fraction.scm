@@ -15,7 +15,7 @@
                               (lambda (i) 1.0)
                               k)))
            0.0001)
-      (display k)
+      (display (- k 1))
       (test (+ k 1)))))
 
 
