@@ -1,3 +1,9 @@
+# Question
+Exercise 2.2.
+
+# Answer
+## Codes
+```scheme
 ;point
 (define (make-point x y)
   (cons x y))
@@ -33,3 +39,19 @@
   (display ",")
   (display (y-point p))
   (display ")"))
+```
+## Runnig
+```
+1 ]=> (make-segment 1 2 3 4)
+
+;Value 21: ((1 . 2) 3 . 4)
+
+1 ]=> (define s (make-segment 1 2 3 4))
+
+;Value: s
+
+1 ]=> (print-point (midpoint-segment s))
+
+(2,3)
+;Unspecified return value
+```
