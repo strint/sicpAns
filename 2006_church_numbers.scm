@@ -1,8 +1,8 @@
 (define zero (lambda (f) (lambda (x) x))) ;turn f into procedure (lambda (x) x)
 (define (add-1 n)
-  (lambda (f) (lambda (x) (f ((n f) x))))) ;
+  (lambda (f) (lambda (x) (f ((n f) x))))) ;'add' f to n
 
-; (add-1 zero)
+;(add-1 zero)
 ;(define one (add-1 zero))
 ;(define one (lambda (f) (lambda (x) (f (((lambda (f) (lambda (x) x)) f) x)))))
 ;(define one (lambda (f) (lambda (x) (f ((lambda (x) x) x)))))
