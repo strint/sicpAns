@@ -13,3 +13,5 @@
 ;(define two (lambda (f) (lambda (x) (f ((one f) x)))))
 ;(define two (lambda (f) (lambda (x) (f ((lambda (x) (f x)) x)))))
 (define two (lambda (f) (lambda (x) (f (f x)))))
+
+(define + (lambda (x y) (lambda (f) (lambda (x) ((x f) ((y f) x))))))
