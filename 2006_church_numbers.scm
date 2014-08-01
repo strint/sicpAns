@@ -15,3 +15,16 @@
 (define two (lambda (f) (lambda (x) (f (f x)))))
 
 (define + (lambda (x y) (lambda (f) (lambda (x) ((x f) ((y f) x))))))
+
+;test
+(newline)
+(define (inc x) (+ x 1))
+(display ((zero inc) 0))
+(newline)
+(display ((one inc) 0))
+(newline)
+(display ((two inc) 0))
+(newline)
+(display (((+ one two) inc) 0))
+
+
