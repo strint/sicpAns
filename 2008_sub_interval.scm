@@ -1,4 +1,4 @@
-;the rule is to get the biggest interval
+;Alyssa's interval arithmetic is to represent the range of possible value of inexact quantities, so when we asumming the range of x is (a, b), the range of y is (c, d), the range of x-y is (a-d, b-c)
 (define (sub-interval x y)
-  (make-interval (- (+ (lower-bound x) (lower-bound y)) (* 2 (max (lower-bound x) (lower-bound y))))
-                 (- (+ (upper-bound x) (upper-bound y)) (* 2 (min (upper-bound x) (upper-bound y))))))
+  (make-interval (- (lower-bound x) (upper-bound y))
+                 (- (upper-bound x) (lower-bound y))))
