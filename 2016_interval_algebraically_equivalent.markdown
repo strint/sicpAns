@@ -6,6 +6,6 @@ I think this is because when an interval I1 operates with I2 and get I3, the per
 
 I think there is not such inerval-arithmetic package that can solve this problem because it's not the problemof the packge but the 'problem' of interval operations itself.
 
-I think Alyssa's implementation of interval is good enough, and when other programmer use the interval operations, they should think in `interval' but not in `algebra'. 
+I think Alyssa's implementation of interval is good enough, and when other programmer use the interval operations, they should think in 'interval' but not in 'algebra'. 
 
 
