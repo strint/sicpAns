@@ -199,3 +199,4 @@ pa1 doesn't equal pa2, so Lem is right.
 ```
 We can see that when the width of interval I1 and I2 is small, center of I1/I1 and I2/I2 is almost 1, I1/I2 almost equals (center I1)/(center I2).
 But when the width of I1 and I2 is quite big, the rules above do not exist.
+When R1R2/(R1+R2) = 1/(1/R1+1/R2), R1/R1 and R2/R2 need to be 1, but this is not true when the width of R1 and R2 are big.
