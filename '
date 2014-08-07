@@ -37,6 +37,4 @@ Exercise 2.19.
 
 ;Value: 292
 ```
-It seems that the order of the list coin-values does not affect the result. But this needs proof.
-
-Any list can be rearranged to another list by exchanging the adjacent elements. So we just need to prove (cc amount (list (listA) a b (list B))) equals (cc amount (list (listA) b a (listB)))
+It seems that the order of the list coin-values does not affect the result. But this needs prove.
