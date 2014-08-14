@@ -204,3 +204,4 @@ Exercise 2.29.
 
 ;Value: #t
 ```
+It is only needed to change the `right-branch` and the `branch-structure`.
