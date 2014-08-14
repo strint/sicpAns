@@ -23,7 +23,12 @@
 (define (balanced? m)
   (define (balance-test mob)
     (if (pair? mob)
-      (+ 
+      (if (= (torque (left-branch mob)) (torque (right-branch mob)))
+        (and (balance-test (branch-structure (left-branch mob))) 
+             (balance-test (branch-structure (right-branch mob))))
+        #f)
+      #t))
+  (balance-test m))
 
 ; test
 (define b1 (make-branch 1 2))
@@ -32,4 +37,9 @@
 (define m1 (make-mobile b1 b2))
 (define b4 (make-branch 5 m1))
 (define m2 (make-mobile b3 b4))
-
+(define m3 (make-mobile b4 b4))
+(define b5 (make-branch 2 6))
+(define b6 (make-branch 3 2))
+(define m4 (make-mobile b5 b3))
+(define m5 (make-mobile b6 b2))
+(define m6 (make-mobile (make-branch 2 m5) (make-branch 1 m4)))
