@@ -1,3 +1,9 @@
+# Question
+Exercise 2.32.
+
+# Answer
+## Codes
+```scheme
 (define (subsets s)
   (if (null? s)
     (list '())
@@ -7,3 +13,11 @@
 
 ; test
 (define s1 (list 1 2 3))
+```
+
+## Running
+```
+1 ]=> (subsets s1)
+
+;Value 13: (() (3) (2) (2 3) (1) (1 3) (1 2) (1 2 3))
+```
