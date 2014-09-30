@@ -1,0 +1,23 @@
+# Question
+Exercise 2.32.
+
+# Answer
+## Codes
+```scheme
+(define (subsets s)
+  (if (null? s)
+    (list '())
+    (let ((rest (subsets (cdr s))))
+      (append rest (map (lambda (x) (cons (car s) x)) ; subsets equals subsets that don't contains (car s) and that contains (car s)
+                          rest)))))
+
+; test
+(define s1 (list 1 2 3))
+```
+
+## Running
+```
+1 ]=> (subsets s1)
+
+;Value 13: (() (3) (2) (2 3) (1) (1 3) (1 2) (1 2 3))
+```
