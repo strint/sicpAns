@@ -1,3 +1,9 @@
+# Question
+Exercise 2.37.
+
+# Answer
+# Codes
+```scheme
 (define (dot-product v w)
   (accumulate + 0 (map * v w)))
 (define (matrix-*-vector m v)
@@ -33,3 +39,35 @@
 (define m2 (list (list 1 1 1) (list 2 2 2) (list 3 3 3) (list 4 4 4)))
 (define v1 (list 1 2 3 4))
 (define v2 (list 4 3 2 1))
+```
+
+# Running
+```
+1 ]=> v1
+
+;Value 13: (1 2 3 4)
+
+1 ]=> v2
+
+;Value 14: (4 3 2 1)
+
+1 ]=> (map * v1 v2)
+
+;Value 15: (4 6 6 4)
+
+1 ]=> (dot-product v1 v2)
+
+;Value: 20
+
+1 ]=> (matrix-*-vector m1 v1)
+
+;Value 18: (30 56 80)
+
+1 ]=> (transpose m2)
+
+;Value 25: ((1 2 3 4) (1 2 3 4) (1 2 3 4))
+
+1 ]=> (matrix-*-matrix m1 m2)
+
+;Value 26: ((30 30 30) (56 56 56) (80 80 80))
+```
