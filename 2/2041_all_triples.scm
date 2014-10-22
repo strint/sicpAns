@@ -1,0 +1,22 @@
+(define (all-triples n s)
+  (define (fit? t)
+    (let ((third (car (cdr (cdr t)))))
+       (and (> third 0) (< third (+ n 1)))))
+  (filter fit? (map (lambda (p) (append p (list (- s (+ (car p) (car (cdr p))))))) (pairs n))))
+
+; pairs
+(define (pairs n)
+  (accumulate append '()
+    (map (lambda (i) 
+           (map (lambda (j) (list j i))
+     	        (enumerate-interval 1 n)))
+  	 (enumerate-interval 1 n))))
+(define (enumerate-interval i j)
+  (if (> i j)
+      '()
+      (cons i (enumerate-interval (+ i 1) j))))
+(define (accumulate op initial sequence)
+  (if (null? sequence)
+    initial
+    (op (car sequence)
+        (accumulate op initial (cdr sequence)))))
