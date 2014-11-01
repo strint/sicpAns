@@ -1,3 +1,5 @@
+(define (count-queens queens-list)
+  (accumulate + 0 (map (lambda (l) 1) queens-list)))
 (define (queens board-size)
   (define (queen-cols k)
     (if (= k 0)
@@ -26,7 +28,7 @@
   (append rest-of-queens (list (list k new-row))))
 (define empty-board '())
 (define (safe? k positions)
-  (and (safe-row? k positions) (safe-diag-45? k positions) (safe-diag-135? k positions)))
+  (and (safe-row? k positions) (safe-diag-135? k positions) (safe-diag-225? k positions)))
 (define (safe-row? k positions)
   (let ((new-position (car (reverse positions)))
         (rest-positions (cdr (reverse positions))))
@@ -34,6 +36,7 @@
                (filter (lambda (posi) (= (car (cdr new-position))
                                          (car (cdr posi))))
                        rest-positions))))
+
 (define (safe-diag-135? k positions)
   (let* ((new-position (car (cdr (car (reverse positions)))))
          (rest-positions (reverse (cdr (reverse positions))))
