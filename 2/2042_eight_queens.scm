@@ -51,14 +51,14 @@
   (define (const-iter i result)
     (if (= i 0)
         result
-        (cons (list i (- new-position (- k i))) result)))
-  (const-iter (- k 1) '()))  
+        (const-iter (- i 1) (append (list (list i (- new-position (- k i)))) result))))
+  (const-iter (- k 2) (list (list (- k 1) (- new-position 1)))))  
 (define (const-pos-225 new-position k)
   (define (const-iter i result)
     (if (= i 0)
         result
-        (cons (list i (+ new-position (- k i))) result)))
-  (const-iter (- k 1) '()))  
+        (const-iter (- i 1) (append (list (list i (+ new-position (- k i)))) result))))
+  (const-iter (- k 2) (list (list (- k 1) (+ new-position 1)))))  
 (define (compare-pos pos1 pos2)
   (cond ((equal? pos1 '()) #t)
         ((equal? (car pos1) (car pos2)) #f)
