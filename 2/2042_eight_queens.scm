@@ -14,6 +14,8 @@
                    (enumerate-interval 1 board-size)))
             (queen-cols (- k 1))))))
   (queen-cols board-size))
+
+;tested
 (define (enumerate-interval i j)
   (if (> i j)
       '()
@@ -25,11 +27,21 @@
     initial
     (op (car sequence)
         (accumulate op initial (cdr sequence)))))
+
+; tested
 (define (adjoin-position k new-row rest-of-queens)
-  (append rest-of-queens (list (list k new-row))))
-(define empty-board '())
+  (if (= k 1)
+      (list (list k new-row))
+      (append rest-of-queens (list (list k new-row)))))
+
+; tested
+(define empty-board (list '()))
+
+; tested
 (define (safe? k positions)
-  (and (safe-row? k positions) (safe-diag-135? k positions) (safe-diag-225? k positions)))
+  (if (= k 1)
+      #t
+      (and (safe-row? k positions) (safe-diag-135? k positions) (safe-diag-225? k positions))))
 (define (safe-row? k positions)
   (let ((new-position (car (reverse positions)))
         (rest-positions (cdr (reverse positions))))
