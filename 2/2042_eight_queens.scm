@@ -1,7 +1,6 @@
 (define (count-queens queens-list)
   (accumulate + 0 (map (lambda (l) 1) queens-list)))
 (define (queens board-size)
-  (display board-size)
   (define (queen-cols k)
     (if (= k 0)
         (list empty-board)
