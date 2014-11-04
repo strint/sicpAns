@@ -1,6 +1,7 @@
 (define (count-queens queens-list)
   (accumulate + 0 (map (lambda (l) 1) queens-list)))
 (define (queens board-size)
+  (display board-size)
   (define (queen-cols k)
     (if (= k 0)
         (list empty-board)
@@ -9,7 +10,7 @@
           (flatmap
             (lambda (rest-of-queens)
               (map (lambda (new-row)
-                     (adjoin-position new-row k rest-of-queens))
+                     (adjoin-position k new-row rest-of-queens))
                    (enumerate-interval 1 board-size)))
             (queen-cols (- k 1))))))
   (queen-cols board-size))
@@ -24,7 +25,7 @@
     initial
     (op (car sequence)
         (accumulate op initial (cdr sequence)))))
-(define (adjoin-position new-row k rest-of-queens)
+(define (adjoin-position k new-row rest-of-queens)
   (append rest-of-queens (list (list k new-row))))
 (define empty-board '())
 (define (safe? k positions)
