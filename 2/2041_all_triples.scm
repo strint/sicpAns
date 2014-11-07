@@ -1,3 +1,5 @@
+; (pairs n)生成所有小于n的两个正数组成的数对，然后每个数对的和被s减掉后的到的数作为三元组的第三个元素，最后fit?去掉那些第三个元素是负数的或大于n的三元组，得到符合要求的结果。
+
 (define (all-triples n s)
   (define (fit? t)
     (let ((third (car (cdr (cdr t)))))
