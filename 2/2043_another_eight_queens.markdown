@@ -2,8 +2,6 @@
 Exercise 2.43.
 
 # Answer
-T^2
-
 对于(queens n)，我们通过算'adjoin-position'次数来衡量方案的时间复杂度。
 
 对于原来的方案，有n^n次'adjoin-position'。
