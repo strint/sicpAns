@@ -13,7 +13,7 @@
     ((segments->painter segment-list) frame)))
 ; d. the wave
 (define (painter-wave frame)
-  (let ((segment-list (list (make-segment 0 0 0 1) (make-segment 0 0 1 0) (make-segment 0 1 1 1) (make-segment 1 0 1 1))))
+  (let ((segment-list (list (make-segment 0 0.75 1 0.5) (make-segment 0.5 0.5 0.5 1) (make-segment 0.5 0.5 0.25 0) (make-segment 0.5 0.5 0.75 0))))
     ((segments->painter segment-list) frame)))
 
 ; painter maker
