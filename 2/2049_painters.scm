@@ -25,6 +25,7 @@
                    ((frame-coord-map frame) (end-segment segment))))
       segment-list)))
 
+; 将在frame中坐标map到标准的直角坐标系中
 (define (frame-coord-map frame)
   (lambda (v)
     (add-vect
