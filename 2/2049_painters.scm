@@ -25,6 +25,13 @@
                    ((frame-coord-map frame) (end-segment segment))))
       segment-list)))
 
+; draw-line
+(define device (make-graphics-device (car (enumerate-graphics-types))))
+(define (draw-line v1 v2)
+        (graphics-draw-line device (xcor-vect v1) (xcor-vect v2) (ycor-vect v1) (ycor-vect v2))
+        ; (graphics-close device)
+        )
+
 ; 将在frame中坐标map到标准的直角坐标系中
 (define (frame-coord-map frame)
   (lambda (v)
@@ -42,6 +49,7 @@
   (car (cdr f)))
 (define (edge2-frame f)
   (cdr (cdr f)))
+(define f0 (make-frame (cons 0.0 0.0) (cons 1.0 0.0) (cons 0.0 1.0)))
 
 ; segment
 (define (make-segment x1 y1 x2 y2)
@@ -57,7 +65,7 @@
 (define (xcor-vect v)
   (car v))
 (define (ycor-vect v)
-  (cdr y))
+  (cdr v))
 (define (add-vect v1 v2)
   (cons (+ (car v1) (car v2))
         (+ (cdr v1) (cdr v2))))
