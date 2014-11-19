@@ -41,8 +41,9 @@
                 (scale-vect (ycor-vect v) (edge2-frame frame))))))
 
 ; frame
+; the origin vector specifies the offset of the frame’s origin from some absolute origin in the plane, and the edge vectors specify the offsets of the frame’s corners from its origin.
 (define (make-frame origin edge1 edge2)
-  (cons origin (cons edge1 edge2)))
+  (cons origin (cons (add-vect origin edge1) (add-vect origin edge2))))
 (define (origin-frame f)
   (car f))
 (define (edge1-frame f)
@@ -76,3 +77,6 @@
 
 ;frame f0
 (define f0 (make-frame (make-vect 0.0 0.0) (make-vect 0.9 0.0) (make-vect 0.0 0.9))) ; 这个语句必须放在make-vecct定义之后，因为scheme是解释性语言，并且这个语言会被直接evaluate，如果放在make-vect定义之前，就会报错说make-vect无定义
+(define f1 (make-frame (make-vect -0.9 0.0) (make-vect 0.9 0.0) (make-vect 0.0 0.9) ))
+(define f2 (make-frame (make-vect -0.9 -0.9) (make-vect 0.9 0.0) (make-vect 0.0 0.9)))
+(define f3 (make-frame (make-vect 0.0 -0.9) (make-vect 0.9 0.0) (make-vect 0.0 0.9)))
