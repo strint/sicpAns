@@ -5,11 +5,11 @@
     ((segments->painter segment-list) frame)))
 ; b. the x
 (define (painter-x frame)
-  (let ((segment-list (list (make-segment 0 0 1 1) (make-segment 0 1 1 0))))
+  (let ((segment-list (list (make-segment 0 1 1 0) (make-segment 0 0 1 1))))
     ((segments->painter segment-list) frame)))
 ; c. the diamond
 (define (painter-diamond frame)
-  (let ((segment-list (list (make-segment 0 0.5 0.5 0) (make-segment 0 0.5 0.5 1) (make-segment 0.5 0 1 0.5) (make-segment 1 0.5 0.5 1))))
+  (let ((segment-list (list (make-segment 0 0.5 0.5 0) (make-segment 0 0.5 0.5 1) (make-segment 0.5 0.0 1.0 0.5) (make-segment 1 0.5 0.5 1))))
     ((segments->painter segment-list) frame)))
 ; d. the wave
 (define (painter-wave frame)
@@ -28,11 +28,11 @@
 ; draw-line
 (define device (make-graphics-device (car (enumerate-graphics-types))))
 (define (draw-line v1 v2)
-        (graphics-draw-line device (xcor-vect v1) (xcor-vect v2) (ycor-vect v1) (ycor-vect v2))
+        (graphics-draw-line device (xcor-vect v1) (ycor-vect v1) (xcor-vect v2) (ycor-vect v2))
         ; (graphics-close device)
         )
 
-; 将在frame中坐标map到标准的直角坐标系中
+; map 将在frame中坐标map到标准的直角坐标系中
 (define (frame-coord-map frame)
   (lambda (v)
     (add-vect
@@ -49,7 +49,6 @@
   (car (cdr f)))
 (define (edge2-frame f)
   (cdr (cdr f)))
-(define f0 (make-frame (cons 0.0 0.0) (cons 1.0 0.0) (cons 0.0 1.0)))
 
 ; segment
 (define (make-segment x1 y1 x2 y2)
@@ -74,3 +73,6 @@
         (- (cdr v1) (cdr v2))))
 (define (scale-vect s v)
   (cons (* s (car v)) (* s (cdr v))))
+
+;frame f0
+(define f0 (make-frame (make-vect 0.0 0.0) (make-vect 0.9 0.0) (make-vect 0.0 0.9))) ; 这个语句必须放在make-vecct定义之后，因为scheme是解释性语言，并且这个语言会被直接evaluate，如果放在make-vect定义之前，就会报错说make-vect无定义
