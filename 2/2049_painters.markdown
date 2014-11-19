@@ -106,7 +106,7 @@ Exercise 2.49.
 ;Unspecified return value
 ```
 画出outline、x、diamond，如图：
-<img src="2049_painters_o_x_d.png>
+<img src="2049_painters_o_x_d.png">
 
 ```
 1 ]=> (load "2049_painters.scm")
