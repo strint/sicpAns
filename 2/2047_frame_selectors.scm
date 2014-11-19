@@ -1,6 +1,6 @@
 ; origin-frame, edge1-frame, and edge2-frame
 (define (make-frame1 origin edge1 edge2)
-  (list origin edge1 edge2))
+  (list origin (add-vect2 origin edge1) (add-vect2 origin edge2)))
 (define (origin-frame1 f)
   (car f))
 (define (edge1-frame1 f)
@@ -9,7 +9,7 @@
   (car (cdr (cdr f))))
 
 (define (make-frame2 origin edge1 edge2)
-  (cons origin (cons edge1 edge2)))
+  (cons origin (cons (add-vect1 origin edge1) (add-vect1 origin edge2))))
 (define (origin-frame2 f)
   (car f))
 (define (edge1-frame2 f)
