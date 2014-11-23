@@ -56,5 +56,43 @@ Exercise 2.51.
 结果如图：
 <img src="2051_below.png">
 
+```
+1 ]=> ((flip-ccw90 (beside (flip-ccw270 painter-wave) (flip-ccw270 painter-wave))) f0)
+
+;Unspecified return value
+
+1 ]=> ((flip-ccw90 (beside painter-wave painter-wave)) f1)
+
+;Unspecified return value
+
+1 ]=> ((flip-ccw90 painter-wave) f2)
+
+;Unspecified return value
+
+1 ]=> (painter-wave f3)
+
+;Unspecified return value
+```
+对'below2'原理的测试，结果如图：
+<img src="2051_below2.png">
+通过对'transform-painter'的分析可知，'((painter-op painter) frame)'这样的结构，运算过程实际上可以看作是'(painter (painter-op frame))'，即转换'painter'的输入参数完成的。
+
+按照这种分析，那么'below2'的替换过程如下：
+```
+((flip-ccw90 (beside (flip-ccw270 painter-x) (flip-ccw270 painter-y))) f0)
+
+((beside (flip-ccw270 painter-x) (flip-ccw270 painter-y)) (FLIP-CCW90 f0)) 
+
+(
+ ((flip-ccw270 painter-x) (BESIDE-LEFT (FLIP-CCW90 f0)))
+ ((flip-ccw270 painter-y) (BESIDE-RIGHT (FLIP-CCW90 f0)))
+)
+
+(
+ (painter-x (FLIP-CCW270 (BESIDE-LEFT (FLIP-CCW90 f0))))
+ (painter-y (FLIP-CCW270 (BESIDE-RIGHT (FLIP-CCW90 f0))))
+)
+```
+
 ## Notes
-* 对于below2的原理不是很清楚，试出来的结果。
+* 对于below2的原理不是很清楚，试出来的结果。现在知道原理了:叠加operation，这里是通过修改叠加修改输入的frame实现的(闭包：修改frame得到一个新的frame，而这个frame是operation的参数)。
