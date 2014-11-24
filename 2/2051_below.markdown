@@ -43,6 +43,19 @@ Exercise 2.51.
 (define (below2 painter1 painter2)
   (lambda (frame)
     ((flip-ccw90 (beside (flip-ccw270 painter1) (flip-ccw270 painter2))) frame)))
+
+; test corner-split
+(load "2045_split.scm")
+(define (corner-split painter n)
+  (if (= n 0)
+      painter
+      (let ((up (up-split painter (- n 1)))
+            (right (right-split painter (- n 1))))
+        (let ((top-left (beside up up))
+              (bottom-right (below right right))
+              (corner (corner-split painter (- n 1))))
+          (beside (below painter top-left)
+                  (below bottom-right corner))))))
 ```
 
 ## Running
@@ -93,6 +106,10 @@ Exercise 2.51.
  (painter-y (FLIP-CCW270 (BESIDE-RIGHT (FLIP-CCW90 f0))))
 )
 ```
+```
+1 ]=> ((corner-split painter-wave 4) f0)
+```
+<img src="2051_below_corner.png">
 
 ## Notes
 * 对于below2的原理不是很清楚，试出来的结果。现在知道原理了:叠加operation，这里是通过修改叠加修改输入的frame实现的(闭包：修改frame得到一个新的frame，而这个frame是operation的参数)。
