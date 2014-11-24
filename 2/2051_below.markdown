@@ -56,6 +56,15 @@ Exercise 2.51.
               (corner (corner-split painter (- n 1))))
           (beside (below painter top-left)
                   (below bottom-right corner))))))
+; test square-limit
+(define (square-limit painter n)
+  (let ((combine4 (square-of-four flip-horiz identity rotate180 flip-vert)))
+    (combine4 (corner-split painter n))))
+(define (square-of-four tl tr bl br)
+  (lambda (painter)
+    (let ((top (beside (tl painter) (tr painter)))
+          (bottom (beside (bl painter) (br painter))))
+         (below bottom top))))
 ```
 
 ## Running
@@ -109,7 +118,16 @@ Exercise 2.51.
 ```
 1 ]=> ((corner-split painter-wave 4) f0)
 ```
+测试'corner-split'，结果如图：
 <img src="2051_below_corner.png">
+
+```
+1 ]=> ((square-limit painter-wave 3) f0)
+
+;Unspecified return value
+```
+测试'square-limit'，结果如图：
+<img src="2051_square_limit.png">
 
 ## Notes
 * 对于below2的原理不是很清楚，试出来的结果。现在知道原理了:叠加operation，这里是通过修改叠加修改输入的frame实现的(闭包：修改frame得到一个新的frame，而这个frame是operation的参数)。
