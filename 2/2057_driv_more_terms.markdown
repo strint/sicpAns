@@ -63,8 +63,7 @@ Exercise 2.57.
          (make-product (exponent expr)
                        (make-product (make-exponentiation (base expr) (make-sum (exponent expr) -1))
                                      (deriv (base expr) var))))
-        (else
-         (error "unknown expression type -- DERIV" expr))))
+        (else (error "unknown expression type -- DERIV" expr))))
 ```
 
 ## Running
