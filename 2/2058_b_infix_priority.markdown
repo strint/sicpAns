@@ -2,6 +2,7 @@
 Exercise 2.58b.
 
 # Answer
+主要思路是：对于式子的一层，根据加号将式子分割成几个term的加法运算，加法运算中的addend是第一个term，augend是加号后面的所有term；根据加号分割出来的每个term是数字、字母、纯的乘法式子中的一种，纯的乘法式子的multiplier是被乘号前面的部分，multiplicand是乘号后面的部分.
 ## Codes
 ```scheme
 (define (variable? x) (symbol? x))
