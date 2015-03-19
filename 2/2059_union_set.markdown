@@ -2,7 +2,7 @@
 Exercise 2.59.
 
 # Answer
-set1中的元素不再set2中时，将该元素加入set2，最后得到的set2就是所求的并集
+set1中的元素不在set2中时，将该元素加入set2，最后得到的set2就是所求的并集
 ## Codes
 ```scheme
 (define (element-of-set? x set)
