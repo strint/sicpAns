@@ -6,6 +6,7 @@ Exercise 2.60.
 * 因为集合中有重复元素，element-of-set?遍历第一个集合的次数会变多，遍历效率降低，这也导致intersection-set效率降低
 * adjoin-set和union-set因为允许重复元素而可以直接合并，所以效率提高
 * 暂时没想到允许重复元素的集合有什么应用场景
+
 ## Codes
 ```scheme
 ;不用改变
