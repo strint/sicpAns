@@ -6,6 +6,6 @@
 * "number_description"，number的第一个数字表示章，后三位表示在该章的题号，description是题目的关键字
  
 #### Other people's answer
-* http://eli.thegreenplace.net/2007/07/09/sicp-section-126/
+* http://eli.thegreenplace.net/tag/sicp
 * https://github.com/huangz1990/SICP-answers/tree/master/chp1
 * https://github.com/MarkCurtiss/sicp
