@@ -7,10 +7,10 @@ Exercise 2.60.
 * adjoin-set和union-set因为允许重复元素而可以直接合并，所以效率提高
 * 暂时没想到允许重复元素的集合有什么应用场景
 * 时间复杂度，n < m
-** element-of-set?： 不可重复theta(n)，可重复theta(m)
-** adjoin-set： 不可重复theta(n)，可重复theta(1)
-** union-set：不可重复theta(n^2),可重复theta(m)，因为append的时间复杂度是theta(n)
-** intersection-set：不可重复theta(n^2)，可重复theta(m^2)
+-- element-of-set?： 不可重复theta(n)，可重复theta(m)
+-- adjoin-set： 不可重复theta(n)，可重复theta(1)
+-- union-set：不可重复theta(n^2),可重复theta(m)，因为append的时间复杂度是theta(n)
+-- intersection-set：不可重复theta(n^2)，可重复theta(m^2)
 
 
 ## Codes
