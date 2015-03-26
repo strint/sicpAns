@@ -115,5 +115,6 @@ Exercise 2.65.
 1 ]=> (tree->list-2 (intersection-set-bt t t2))
 
 ;Value 22: (5 9)
-
 ```
+## Notes
+* 2.62 2.63 2.64 这三个习题的结果刚好可以为2.65所用，题目设计的真是巧妙
