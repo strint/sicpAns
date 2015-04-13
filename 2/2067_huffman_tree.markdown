@@ -1,3 +1,9 @@
+# Question
+Exercise 2.67.
+
+# Answer
+## Codes
+```scheme
 ; leaf
 (define (make-leaf symbol weight)
   (list 'leaf symbol weight))
@@ -65,3 +71,26 @@
 
 ; define a coded massage
 (define sample-message '(0 1 1 0 0 1 0 1 0 1 1 1 0))
+```
+
+## Running
+```
+1 ]=> sample-tree
+
+;Value 11: ((leaf a 4) ((leaf b 2) ((leaf d 1) (leaf c 1) (d c) 2) (b d c) 4) (a b d c) 8)
+
+1 ]=> 'A
+
+;Value: a
+
+1 ]=> sample-message
+
+;Value 12: (0 1 1 0 0 1 0 1 0 1 1 1 0)
+
+1 ]=> (decode sample-message sample-tree)
+
+;Value 13: (a d d c d c d c c c d)
+```
+
+## Notes
+* 勇气和毅力
