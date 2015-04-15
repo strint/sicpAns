@@ -1,3 +1,9 @@
+# Question
+Exercise 2.68.
+
+# Answer
+## Codes
+```scheme
 ; leaf
 (define (make-leaf symbol weight)
   (list 'leaf symbol weight))
@@ -94,3 +100,31 @@
 
 ; define a message
 (define origin-message '(a d a b b c a))
+```
+
+## Running
+```
+1 ]=> (encode-symbol 'a sample-tree)
+
+;Value 15: (0)
+
+1 ]=> (encode-symbol 'b sample-tree)
+
+;Value 16: (1 0)
+
+1 ]=> (encode-symbol 'c sample-tree)
+
+;Value 17: (1 1 1)
+
+1 ]=> (encode-symbol 'd sample-tree)
+
+;Value 18: (1 1 0)
+
+1 ]=> (encode origin-message sample-tree)
+
+;Value 19: (0 1 1 0 0 1 0 1 0 1 1 1 0)
+
+1 ]=> sample-message
+
+;Value 20: (0 1 1 0 0 1 0 1 0 1 1 1 0)
+```

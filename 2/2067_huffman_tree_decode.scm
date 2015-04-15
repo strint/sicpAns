@@ -28,13 +28,15 @@
 ; decode
 ; bits is a list of 1s and 0s
 (define (decode bits tree)
-  (if (null? bits)
-      '()
-      (let ((next-branch (choose-branch (car bits) tree)))
-        (if (leaf? next-branch)
-            (cons (symbol-leaf next-branch) 
-                  (decode (cdr bits) tree))
-            (decode (cdr bits) next-branch)))))
+  (define (decode-1 bits current-branch) ;定义一个辅助函数的作用是为了保存完整的encode tree，当解码完一个字符后，再从encode tree的根节点开始解码下一个字符
+    (if (null? bits)
+        '()
+        (let ((next-branch (choose-branch (car bits) current-branch)))
+          (if (leaf? next-branch)
+              (cons (symbol-leaf next-branch) 
+                    (decode-1 (cdr bits) tree))
+              (decode-1 (cdr bits) next-branch)))))
+  (decode-1 bits tree))
 (define (choose-branch bit tree)
   (cond ((= bit 0) (left-branch tree))
         ((= bit 1) (right-branch tree))
