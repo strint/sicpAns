@@ -3,7 +3,7 @@
 > "Lisp programmers knows the value of everything but the cost of nothing."(Alan Perlis)
 
 * *SICP*: http://mitpress.mit.edu/sicp/ 
-* What is SICP about: ~~constructing and interpreting programs~~ control complexity when building large systems
+* What is SICP about: ~~constructing and interpreting programs~~ Manage complexity when building large systems
 * "number_description"，number的第一个数字表示章，后三位表示在该章的题号，description是题目的关键字
  
 #### Other people's answer
