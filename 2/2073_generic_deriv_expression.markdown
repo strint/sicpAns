@@ -3,6 +3,7 @@ Exercise 2.73.
 
 # Answer
 ## a
+数字和变量的处理方法没有被加到operation-type-table中，是因为这两中类型的表达式中没有type tag
 
 ## b&c
 ### Codes
@@ -98,3 +99,7 @@ Exercise 2.73.
 ```
 
 ## d
+* 思路是调整put输入的顺序，使它与现在需要的get的顺序一致就好了。
+```
+(put (operator expr) 'deriv) procedure)
+```
