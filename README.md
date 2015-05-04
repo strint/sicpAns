@@ -10,3 +10,7 @@
 * http://eli.thegreenplace.net/tag/sicp
 * https://github.com/MarkCurtiss/sicp
 * https://github.com/huangz1990/SICP-answers
+
+### 答案运行环境
+* Ubuntu 12.04
+* MIT/GNU Scheme running under GNU/Linux, Release 9.1, Microcode 15.3, Runtime 15.7, SF 4.41, LIAR/i386 4.118, Edwin 3.116
