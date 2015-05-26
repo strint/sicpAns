@@ -13,7 +13,8 @@
 
 ; **********************rectangular package**********************
 (define (install-rectangular-package)
-  ;; internal procedures
+  ; internal procedures
+  ; 因为scheme中自带real-part等方法,所以自己定义的方法在后面加上字符以区别
   (define (real-part-x z) (car z))
   (define (imag-part-x z) (cdr z))
   (define (make-from-real-imag x y) (cons x y))

@@ -2,7 +2,7 @@
 Exercise 2.77.
 
 # Answer
-(magnitude-x c)被定义为(apply-generic 'magnitude-x c),所以它去operation-type-table中查找处理对应数据类型对应的方法.它调用了两次apply-generic方法,第一分配的方法是处理complex类型的magnitude-x方法,第二次分配的是处理rectangular类型的magnitude-x方法.
+(magnitude-x c)被定义为(apply-generic 'magnitude-x c),所以它去operation-type-table中查找处理对应数据类型对应的方法.它调用了两次apply-generic方法,第一分配的方法是处理complex类型的magnitude-x方法,第二次分配的是处理rectangular类型的magnitude-x方法.(因为scheme中自带magnitude等方法,所以自己定义的magnitude方法在后面加上字符以区别)
 
 ## Codes
 ```scheme
@@ -21,8 +21,9 @@ Exercise 2.77.
 
 ; **********************rectangular package**********************
 (define (install-rectangular-package)
-  ;; internal procedures
-  (define (real-part-x z) (car z))
+  ; internal procedures
+  ; 因为scheme中自带real-part等方法,所以自己定义的方法在后面加上字符以区别
+  (define (real-part-x z) (car z)) 
   (define (imag-part-x z) (cdr z))
   (define (make-from-real-imag x y) (cons x y))
   (define (magnitude-x z)
