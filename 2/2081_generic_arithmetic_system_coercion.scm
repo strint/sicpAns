@@ -3,7 +3,11 @@
 (define (put op-name data-type procdure)
   (hash-table/put! op-type-table (list op-name data-type) procdure))
 (define (get op-name data-type)
-  (hash-table/get op-type-table (list op-name data-type) #f)) ;notice, must return #f when get nothing, if return '(), there will have a bug in apply-generic(;The object () is not applicable.), because '() is not #f and will be apply
+  (hash-table/get op-type-table (list op-name data-type) #f))
+  ;notice, must return #f when get no method
+  ;if return '(), there will have a bug in apply-generic
+  ;ERROR: the object () is not applicable.
+  ;because (if '()) is true and will apply '()
 ; ***************operation-and-type table(end)*******************
 
 ; ******operation-and-type table for coercion*****************
