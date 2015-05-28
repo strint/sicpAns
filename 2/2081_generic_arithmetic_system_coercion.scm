@@ -7,7 +7,13 @@
   ;notice, must return #f when get no method
   ;if return '(), there will have a bug in apply-generic
   ;ERROR: the object () is not applicable.
-  ;because (if '()) is true and will apply '()
+  ;because in apply-generic 
+  ;  (let ((proc (get op type-tags)))
+  ;    (if proc
+  ;        (apply proc (map contents args))
+  ;when proc is '(), (if proc (apply proc (map contents args)))
+  ;will be regarded as (if #t (apply proc (map contents args)))
+  ;and will apply '()
 ; ***************operation-and-type table(end)*******************
 
 ; ******operation-and-type table for coercion*****************
