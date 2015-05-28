@@ -3,8 +3,16 @@
 (define (put op-name data-type procdure)
   (hash-table/put! op-type-table (list op-name data-type) procdure))
 (define (get op-name data-type)
-  (hash-table/get op-type-table (list op-name data-type) '()))
+  (hash-table/get op-type-table (list op-name data-type) #f)) ;notice, must return #f when get nothing, if return '(), there will have a bug in apply-generic(;The object () is not applicable.), because '() is not #f and will be apply
 ; ***************operation-and-type table(end)*******************
+
+; ******operation-and-type table for coercion*****************
+(define op-type-table-coercion (make-hash-table))
+(define (put-coercion data-type-1 data-type-2 procdure)
+  (hash-table/put! op-type-table-coercion (list data-type-1 data-type-2) procdure))
+(define (get-coercion data-type-1 data-type-2)
+  (hash-table/get op-type-table-coercion (list data-type-1 data-type-2) #f))
+; *****operation-and-type table for coercion(end)***************
 
 ; *****************apply generic*****************
 (define (type-tag datum)
@@ -46,14 +54,6 @@
               (error "No method for these types"
                      (list op type-tags)))))))
 ; *****************apply generic(end)*****************
-
-; ******operation-and-type table for coercion*****************
-(define op-type-table-coercion (make-hash-table))
-(define (put-coercion data-type-1 data-type-2 procdure)
-  (hash-table/put! op-type-table-coercion (list data-type-1 data-type-2) procdure))
-(define (get-coercion data-type-1 data-type-2)
-  (hash-table/get op-type-table-coercion (list data-type-1 data-type-2) '()))
-; *****operation-and-type table for coercion(end)***************
 
 ; *************** data coercion *****************
 (define (scheme-number->complex n)
@@ -301,6 +301,6 @@
 
 (define r->s (rational->scheme-number r1))
 (define s->c (scheme-number->complex s1))
-;(define r+s (add r1 s1))
+(define r+s (add r1 s1))
 (define s+c (add s1 c1))
 ; ************* test(end) ****************
