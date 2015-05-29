@@ -1,3 +1,12 @@
+# Question
+Exercise 2.81.
+
+# Answer
+- a. 当apply-generic没有找到方法时, 会产生了一个死循环. 调用apply-generic方法后, 没有找到处理complex的exp方法, 但是会将complex转成comple后再调用apply-generic方法,如此循环.
+- b. Louis的考虑是错误的, 如果是相同的类型时, 找不到相应的处理方法时, 就应该放弃, 而不是做一次无用的转换. 当然, 转到更高的数据类型然后再去找相应的方法是个可以考虑的思路. 比如没有处理scheme-number的方法, 可以考虑将scheme-number转成complex, 然后尝试去找到需要的方法.
+- c. 见下面的代码
+## Codes
+```scheme
 ; ***************operation-and-type table**********************
 (define op-type-table (make-hash-table))
 (define (put op-name data-type procdure)
@@ -314,3 +323,29 @@
 (define r+s (add r1 s1))
 (define s+c (add s1 c1))
 ; ************* test(end) ****************
+```
+
+## Running
+```
+1 ]=> (load "2081_generic_arithmetic_system_coercion.scm")
+
+;Loading "2081_generic_arithmetic_system_coercion.scm"...
+;Value: s+c
+
+1 ]=> r->s     
+
+;Value: .5
+
+1 ]=> s->c
+
+;Value 15: (complex rectangular 4 . 0)
+
+1 ]=> r+s
+
+;Value: 4.5
+
+1 ]=> s+c
+
+;Value 16: (complex rectangular 5 . 2)
+```
+
