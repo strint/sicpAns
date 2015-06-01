@@ -8,6 +8,7 @@
 
 #### Other people's answer
 * http://eli.thegreenplace.net/tag/sicp
+* https://github.com/Javran/Thinking-dumps/tree/master/sicp
 * https://github.com/MarkCurtiss/sicp
 * https://github.com/huangz1990/SICP-answers
 
