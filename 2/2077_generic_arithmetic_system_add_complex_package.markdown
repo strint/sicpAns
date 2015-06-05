@@ -11,7 +11,7 @@ Exercise 2.77.
 (define (put op-name data-type procdure)
   (hash-table/put! op-type-table (list op-name data-type) procdure))
 (define (get op-name data-type)
-  (hash-table/get op-type-table (list op-name data-type) '()))
+  (hash-table/get op-type-table (list op-name data-type) #f)
 ; ***************operation-and-type table(end)*******************
 
 ; **********************attech type tag********************
