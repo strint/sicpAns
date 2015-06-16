@@ -382,7 +382,7 @@
 (put 'raise 'rational
      (lambda (ra) (make-real (exact->inexact (/ (numer ra) (denom ra))))))
 (put 'raise 'real
-     (lambda (re) (make-complex-from-real-imag (contents re) 0)))
+     (lambda (re) (make-complex-from-real-imag (make-real (contents re)) (make-real 0)))); notic: must add make-real
 (define (raise x)
   ((get 'raise (type-tag x)) x))
 ; *************raise(end)******************
@@ -397,7 +397,12 @@
 ; *************project*******************
 ; push an object down in a tower
 (put 'project 'complex
-  (lambda (c) (make-real (real-part-x c))))
+  (lambda (c) (make-real 
+                (let* ((real-part-c (real-part-x c))
+                       (type-of-real-part (type-tag real-part-c)))
+                  (if (eq? type-of-real-part 'rational)
+                      (exact->inexact (/ (numer real-part-c) (denom real-part-c)))
+                      (contents real-part-c))))))
 (put 'project 'real
   (lambda (re) (make-rational (round (contents re)) 1)))
   ;Note: there is a better way to project real to rational
