@@ -43,6 +43,8 @@
 ; * support complex to make complex from scheme-number (may confuse with real/integer)
 ; * add operation can support more than two operands
 ; * when there is no operation for two data type, try to raise or project the two data types, and see if there are operation after coversion
+; * more accurate way to project real to rational
+; * package this generic system 
 ; ***************Generic arithmetic arithmetic system structure(end)*************
 
 ; ***************operation-and-type table**********************
