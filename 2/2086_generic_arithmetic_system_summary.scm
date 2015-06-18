@@ -1,4 +1,4 @@
-; ***************Generic arithmetic arithmetic system structure*************
+; ***************Generic arithmetic system structure*************
 ;                                                                                                                                      
 ;                                +-----------------------------+          
 ;                                | complex(reatangular/polar)  |<-------+            \                                 \                   \      
@@ -45,7 +45,7 @@
 ; * when there is no operation for two data type, try to raise or project the two data types, and see if there are operation after coversion
 ; * more accurate way to project real to rational
 ; * package this generic system 
-; ***************Generic arithmetic arithmetic system structure(end)*************
+; ***************Generic arithmetic system structure(end)*************
 
 ; ***************operation-and-type table**********************
 (define op-type-table (make-hash-table))
