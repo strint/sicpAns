@@ -1,3 +1,50 @@
+; ***************Generic arithmetic arithmetic system structure*************
+;                                                                                                                                      
+;                                +-----------------------------+          
+;                                | complex(reatangular/polar)  |<-------+            \                                 \                   \      
+;                                |-----------------------------|        |            |                                 |                   |
+;                                | make-complex-from-real-imag |        |            |                                 |                   |
+;                                | make-complex-from-mag-ang   |        |            |                                 |                   |
+;                                |-----------------------------|        |            |                                 |                   |
+;                                |                             |        |            |                                 |                   |
+;                                +-----------------------------+        |            |                                 |                   |
+;                                             /\  ||                    |      +-----------+                     +-----------+       +-----------+
+;                                      raise  ||  || project            |      | add       |                     | type-tag  |       | raise-n   |
+;                                             ||  \/                    |      | sub       |                     | contents  |       | drop      |
+;                                +-----------------------------+        |      | mul       |          \          |           |       |           |
+;                       +------->| real                        |------->|      | div       |          |          |           |       |           |
+;                       |        |-----------------------------|        |      | equ?      |          |          |           |       |           |
+;                       |        | make-real                   |        |      | =zero?    |          |          |           |       |           |
+;                       |        |-----------------------------|        |      +-----------+          |          +-----------+       +-----------+
+;                       |        |                             |        |            |          +-----------+          |                   |      
+;                       |        +-----------------------------+        |            |          | square-x  |          |                   |      
+;                       |                     /\  ||                    |            |          | sqrt-x    |          |                   |      
+;                       |              raise  ||  || project            |            |          | atan-x    |          |                   |      
+;                       |                     ||  \/                    |            |          | cos-x     |          |                   |      
+;+---------------+      |        +-----------------------------+        |            |          | sin-x     |          |                   |      
+;| scheme-number |------+------->| rational                    |------->|            |          +-----------+          |                   |      
+;|---------------|      |        |-----------------------------|        |            |                |                |                   |      
+;|               |      |        | make-rational               |        |            |                |                |                   |      
+;|---------------|      |        |-----------------------------|        |            |                |                |                   |      
+;| +             |      |        |                             |        |            |                |                |                   |      
+;| -             |      |        +-----------------------------+        |            |                |                |                   |      
+;| *             |      |                     /\  ||                    |            |                |                |                   |      
+;| /             |      |              raise  ||  || project            |            |                |                |                   |      
+;| square        |      |                     ||  \/                    |            |                |                |                   |      
+;| sqrt          |      |        +-----------------------------+        |            |                |                |                   |      
+;| atan          |      +------->| integer                     |------->|            |                |                |                   |      
+;| cos           |               |-----------------------------|                     |                |                |                   |      
+;| sin           |               | make-integer                |                     |                |                |                   |      
+;| =             |               |-----------------------------|                     |                |                |                   |      
+;+---------------+               |                             |                     |                |                |                   |      
+;                                +-----------------------------+                     /                /                /                   /      
+;                                                                                    
+; Something more can be done:
+; * support complex to make complex from scheme-number (may confuse with real/integer)
+; * add operation can support more than two operands
+; * when there is no operation for two data type, try to raise or project the two data types, and see if there are operation after coversion
+; ***************Generic arithmetic arithmetic system structure(end)*************
+
 ; ***************operation-and-type table**********************
 (define op-type-table (make-hash-table))
 (define (put op-name data-type procdure)
