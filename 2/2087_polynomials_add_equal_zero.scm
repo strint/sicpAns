@@ -360,7 +360,11 @@
     (cons variable term-list))
   (define (variable p) (car p))
   (define (term-list p) (cdr p))
-  (define (=zero? p) ; when p is "0", we can see from adjoin-term than p's term-list will be empty
+
+  ; when p is "0", we can see from adjoin-term that p's term-list will be empty,
+  ; because when the integer/rational/real coefficident equals to zero, 
+  ; then the term will not be added, thus make p empty 
+  (define (=zero? p) 
     (eq? (term-list p) (the-empty-termlist)))
   (define (add-poly p1 p2)
     (if (same-variable? (variable p1) (variable p2))
