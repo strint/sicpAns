@@ -4,6 +4,7 @@ Exercise 2.87.
 # Answer
 * fix bug in integer package, integer divides integer gets real
 * scheme-number will be dealed as real
+
 ## Codes
 ```scheme
 ; ***************operation-and-type table**********************
