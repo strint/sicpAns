@@ -1,3 +1,11 @@
+# Question
+Exercise 2.87.
+
+# Answer
+* fix bug in integer package, integer divides integer gets real
+* scheme-number will be dealed as real
+## Codes
+```scheme
 ; ***************operation-and-type table**********************
 (define op-type-table (make-hash-table))
 (define (put op-name data-type procdure)
@@ -613,3 +621,28 @@
 ;(define r+s (add r1 s1))
 ;(define s+c (add s1 c1))
 ; ************* test(end) ****************
+```
+
+## Running
+```
+1 ]=> p1
+
+;Value 40: (polynomial x (1 (real . 5.6)) (2 (rational 1 . 2)))
+
+1 ]=> p2
+
+;Value 41: (polynomial x (1 (complex rectangular 1 . 2)) (2 (real . 4.5)))
+
+1 ]=> (add p1 p2)
+
+;Value 42: (polynomial x (1 (complex rectangular (real . 6.6) integer . 2.)) (2 (integer . 5.)))
+
+1 ]=> (mul p1 p2)
+
+;Value 43: (polynomial x (3 (complex polar (real . 1.118033988749895) real . 1.1071487177940904)) (4 (real . 2.25)) (2 (complex polar (real . 12.521980673998822) real . 1.1071487177940904)) (3 (real . 25.2)))
+
+1 ]=> p3
+
+;Value 44: (polynomial x (2 (polynomial x (1 (real . 5.6)) (2 (rational 1 . 2)))))
+
+```
