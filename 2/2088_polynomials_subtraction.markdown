@@ -1,3 +1,11 @@
+# Quesiton
+Exercise 2.88.
+
+# Answer
+* add generic negation operation on scheme-number/integer/rational/real/complex/polynomial
+* use (add p1 (neg p2)) to realize (sub p1 p2)
+## Codes
+```scheme
 ; ***************operation-and-type table**********************
 (define op-type-table (make-hash-table))
 (define (put op-name data-type procdure)
@@ -647,3 +655,24 @@
 ;(define r+s (add r1 s1))
 ;(define s+c (add s1 c1))
 ; ************* test(end) ****************
+```
+
+## Running
+```
+1 ]=> (load "2088_polynomials_subtraction.scm")
+
+;Loading "2088_polynomials_subtraction.scm"... done
+;Value: p4
+
+1 ]=> p1
+
+;Value 13: (polynomial x (1 (real . 5.6)) (2 (rational 1 . 2)))
+
+1 ]=> p2
+
+;Value 14: (polynomial x (1 (complex rectangular 1 . 2)) (2 (real . 4.5)))
+
+1 ]=> (sub p1 p2)
+
+;Value 15: (polynomial x (1 (complex rectangular (real . 4.6) integer . -2.)) (2 (integer . -4.)))
+```
