@@ -4,6 +4,7 @@ Exercise 2.88.
 # Answer
 * add generic negation operation on scheme-number/integer/rational/real/complex/polynomial
 * use (add p1 (neg p2)) to realize (sub p1 p2)
+
 ## Codes
 ```scheme
 ; ***************operation-and-type table**********************
