@@ -1,3 +1,13 @@
+# Question
+Exercise 2.93.
+
+# Answer
+* replace part of rational package with generic operations to suport polynomial rational
+* remove project on rational, because there is not a good way to project rational whose number or denom is polynomials
+* it hard to add polynomial rational or complex directly in the system, i think polynomial rational may not be a generic rational, create a type polynomial-rational maybe a more natural way
+
+## Codes
+```scheme
 ; ***************operation-and-type table**********************
 (define op-type-table (make-hash-table))
 (define (put op-name data-type procdure)
@@ -693,3 +703,16 @@
 ;(define r+s (add r1 s1))
 ;(define s+c (add s1 c1))
 ; ************* test(end) ****************
+```
+
+## Running
+```
+1 ]=> (load "2093_polynomials_rational.scm")
+
+;Loading "2093_polynomials_rational.scm"... done
+;Value: rf
+
+1 ]=> (add rf rf)
+
+;Value 19: (rational (polynomial x (7 (integer . 2)) (5 (integer . -2)) (2 (integer . -2)) (0 (integer . 2))) polynomial x (4 (integer . 1)) (2 (integer . -2)) (0 (integer . 1)))
+```
