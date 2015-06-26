@@ -4,7 +4,7 @@ Exercise 2.52.
 # Answer
 ## Codes
 ```scheme
-(load "2051_below.scm")
+(load "2051_picture_language_below.scm")
 
 ; change painter-wave
 (define (painter-wave2 frame)
