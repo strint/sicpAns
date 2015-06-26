@@ -106,7 +106,7 @@ Exercise 2.49.
 ;Unspecified return value
 ```
 画出outline、x、diamond，如图：
-<img src="2049_painters_o_x_d.png">
+<img src="2049_picture_language_painters_o_x_d.png">
 
 ```
 1 ]=> (load "2049_painters.scm")
@@ -121,7 +121,7 @@ Exercise 2.49.
 ;Unspecified return value
 ```
 画出wave，如图：
-<img src="2049_painters_wave.png">
+<img src="2049_picture_language_painters_wave.png">
 
 ## Notes
 * 在draw-line这个部分花费了很多时间，之前一直画出的图缺几条线，开始以为是输入的数据有问题，就修改输入数据测试，还是不行；最后写了一个draw-line的例子测了一下，才知道enumerate-graphics-type是什么样子，之前的一些线可能画到device外面去了，发现graphics-draw-line的参数顺序跟我之前认为的好像不一样，然后又读了下官方的graphics-draw-line文档，才发现的确把参数的顺序输入错了。然后调整了一下frame f0的大小，修改了graphics-draw-line的参数输入顺序，就得到想要的结果了。
