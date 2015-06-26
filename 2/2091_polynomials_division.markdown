@@ -1,3 +1,12 @@
+# Question
+Exercise 2.91.
+
+# Answer
+* add div for polynomials 
+* fix bug in adjoint-term, change =zero? to =zero?-poly, so adjoint-term will use the generic =zero? but the =zero? for polynomials
+
+## Codes
+```
 ; ***************operation-and-type table**********************
 (define op-type-table (make-hash-table))
 (define (put op-name data-type procdure)
@@ -687,3 +696,24 @@
 ;(define r+s (add r1 s1))
 ;(define s+c (add s1 c1))
 ; ************* test(end) ****************
+```
+
+# Running 
+```
+1 ]=> (load "2091_polynomials_division.scm")
+
+;Loading "2091_polynomials_division.scm"... done
+;Value: p6
+
+1 ]=> p5
+
+;Value 16: (polynomial x (5 (integer . 1)) (0 (integer . -1)))
+
+1 ]=> p6
+
+;Value 17: (polynomial x (2 (integer . 1)) (0 (integer . -1)))
+
+1 ]=> (div p5 p6)
+
+;Value 18: ((polynomial x (3 (integer . 1.)) (1 (integer . 1.))) (polynomial x (1 (integer . 1.)) (0 (integer . -1))))
+```
