@@ -4,7 +4,7 @@ Exercise 2.50.
 # Answer
 ## Codes
 ```scheme
-(load "2049_painters.scm")
+(load "2049_picture_language_painters.scm")
 
 (define (flip-horiz painter)
    (transform-painter painter
