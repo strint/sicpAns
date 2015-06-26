@@ -1,5 +1,5 @@
-(load "2049_painters.scm")
-(load "2050_flip_horiz.scm")
+(load "2049_picture_language_painters.scm")
+(load "2050_picture_language_flip_horiz.scm")
 (define (below painter1 painter2)
   (let ((split-point (make-vect 0.0 0.5)))
     (let ((paint-down
