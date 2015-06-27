@@ -57,7 +57,7 @@ Exercise 2.50.
 ;Unspecified return value
 ```
 结果如图：
-<img src="2050_flip.png">
+<img src="2050_picture_language_flip.png">
 
 ## Notes
 * 由于对frame-coord-map的理解不清晰，导致实现make-frame时出现错误
