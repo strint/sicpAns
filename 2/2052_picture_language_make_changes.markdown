@@ -45,7 +45,7 @@ Exercise 2.52.
 
 ```
 测试结果如图：
-<img src="2052_make_changes.png">
+<img src="2052_picture_language_make_changes.png">
 
 # Notes
 * 这次比较顺利，虽然牵扯的代码比较多，但是采用了修改后就测试的方式，所以没有出现比较难找的bug
