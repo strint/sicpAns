@@ -1,5 +1,9 @@
-# Newton's method for cube roots
+# Question
+Exercise 1.8.: Newton's method for cube roots
+
+# Answer
 ## Codes
+```scheme
     (define (cube-roots in)
       (cube-roots-iter 1.0 in in))
     
@@ -24,10 +28,11 @@
              (if (> test-times 0)
                (cube-roots-test (* num num num) (- test-times 1))
                (display test-times))))
+```
 
 ## Running
 ### Test of very small numbers
-
+```
     1 ]=> (load "1008_cube_roots.scm")
     
     ;Loading "1008_cube_roots.scm"... done
@@ -57,9 +62,10 @@
     ;Floating-point underflow
     ;To continue, call RESTART with an option number:
     ; (RESTART 1) => Return to read-eval-print level 1.
+```
 
 ### Test of very large numbers
-
+```
     1 ]=> (cube-roots-test 2 5)
     8
     2
@@ -86,4 +92,4 @@
     ;Floating-point overflow
     ;To continue, call RESTART with an option number:
     ; (RESTART 1) => Return to read-eval-print level 1.
-    
+```    
