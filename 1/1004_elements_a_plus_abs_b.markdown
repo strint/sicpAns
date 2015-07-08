@@ -1,5 +1,14 @@
-#c01e04-a-plus-abs-b.scm
+# Question
+Exercise 1.4.
 
+# Answer
+## Codes
+```scheme
+(define (a-plus-abs-b a b)
+  ((if (< b 0) - +) a b))
+```
+
+## Running
 ```
 1 ]=> (load "c01e04.scm")
 
