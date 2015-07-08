@@ -5,9 +5,3 @@
       angle
       (begin (display angle) (newline)
              (p (sine (/ angle 3.0))))))
-
-
-
-
-
-
