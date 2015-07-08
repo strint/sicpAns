@@ -1,4 +1,8 @@
-# Test very small and very large numbers
+# Question
+Exercise 1.7.
+
+# Answer
+Test very small and very large numbers
 ## Codes
 
     ;1007.scm
@@ -33,7 +37,7 @@
                num)))
    
 ## Running
-### Test of very small numbers
+### Test very small numbers
 
     1 ]=> (load "1007.scm")
     
