@@ -10,7 +10,7 @@ Exercise 1.4.
 
 ## Running
 ```
-1 ]=> (load "c01e04.scm")
+1 ]=> (load "1004_elements_a_plus_abs_b.scm")
 
 ;Loading "c01e04.scm"... done
 ;Value: a-plus-abs-b
