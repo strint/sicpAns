@@ -1,4 +1,3 @@
-;1003-sum-of-biggertwo.scm
 (define (sum-of-biggertwo a b c)
   (- (+ a b c)
      (little a
