@@ -15,4 +15,4 @@
 ### 答案运行环境
 * Ubuntu 12.04
 * MIT/GNU Scheme running under GNU/Linux, Release 9.1, Microcode 15.3, Runtime 15.7, SF 4.41, LIAR/i386 4.118, Edwin 3.116
-* [MIT Scheme的使用](http://www.math.pku.edu.cn/teachers/qiuzy/progtech/scheme/mit_scheme.htm)
+* [MIT Scheme的使用方式](http://www.math.pku.edu.cn/teachers/qiuzy/progtech/scheme/mit_scheme.htm)
