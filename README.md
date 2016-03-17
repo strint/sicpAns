@@ -1,3 +1,4 @@
+## SICP
 ###SICP 习题练习
 > "A man who knows the price of everything and the value of nothing."(Oscar Wilde).
 > "Lisp programmers knows the value of everything but the cost of nothing."(Alan Perlis)
@@ -21,5 +22,6 @@
 * SICP chapter 1: Building Abstractions with Procedures, Harold Abelson and Gerald Jay Sussman, 对程序中Procedure的系统讨论，做完了课后46道加深理解的练习题，打开眼界，另外着本书讲编程的一个特点是在细节上每个程序都从高层深入到底层的基本元素，在宏观上提炼了核心的编程思想, 201406&07.
 
 -----
-### 函数式程序设计
+## 函数式程序设计
 * 函数式语言中的编程模型：map，filter，accumulate；prdictor，constructor，selector。
+* [函数式编程简介 by byvoid](http://byvoid.github.io/slides/apio-fp/index.html)
