@@ -1,5 +1,5 @@
 # Question
-Exercise 2.75.
+[Exercise 2.75.](https://mitpress.mit.edu/sicp/full-text/book/book-Z-H-17.html#%_sec_2.4.3)
 
 # Answer
 ## Codes
@@ -66,3 +66,8 @@ Exercise 2.75.
 ;Value: .785
 ```
 
+## Notes
+* 这种过程作为数据的模式在sicp中叫做message passing，中文对应的可以是信息传递
+* 写message passing的时候感觉特别像是oop：将数据塞进一个函数（初始化成员变量），然后这个函数根据你发给它的不同请求消息返回不同的结果（oop中的成员函数）
+* 果然早期的oop里面的object叫做receiver：http://web.stanford.edu/class/cs193j/handouts_old/03OOPConcepts.pdf
+* 看来message passing的确对应oop
