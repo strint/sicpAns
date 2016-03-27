@@ -130,4 +130,4 @@ Exercise 2.51.
 <img src="2051_picture_language_square_limit.png">
 
 ## Notes
-* 对于below2的原理不是很清楚，试出来的结果。现在知道原理了:叠加operation，这里是通过修改叠加修改输入的frame实现的(闭包：修改frame得到一个新的frame，而这个frame是operation的参数)。
+* 叠加operation，这里是通过修改叠加修改输入的frame实现的(闭包：修改frame得到一个新的frame，而这个frame是operation的参数)。
