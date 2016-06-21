@@ -21,6 +21,3 @@
 * 函数式语言中的编程模型：map，filter，accumulate；prdictor，constructor，selector。
 * [函数式编程简介 by byvoid](http://byvoid.github.io/slides/apio-fp/index.html)
 
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/strint/sicpans/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
