@@ -76,7 +76,7 @@ Exercise 2.51.
 1 ]=> ((below painter-wave painter-wave) f1)
 ```
 结果如图：
-<img src="2051_picture_language_below.png">
+* <img src="2051_picture_language_below.png">
 
 ```
 1 ]=> ((flip-ccw90 (beside (flip-ccw270 painter-wave) (flip-ccw270 painter-wave))) f0)
@@ -96,7 +96,8 @@ Exercise 2.51.
 ;Unspecified return value
 ```
 对'below2'原理的测试，结果如图：
-<img src="2051_picture_language_below2.png">
+* <img src="2051_picture_language_below2.png">
+
 通过对'transform-painter'的分析可知，'((painter-op painter) frame)'这样的结构，运算过程实际上可以看作是'(painter (painter-op frame))'，即转换'painter'的输入参数完成的。
 
 按照这种分析，那么'below2'的替换过程如下：
@@ -118,6 +119,7 @@ Exercise 2.51.
 ```
 1 ]=> ((corner-split painter-wave 4) f0)
 ```
+
 测试'corner-split'，结果如图：
 <img src="2051_picture_language_below_corner.png">
 
@@ -127,7 +129,7 @@ Exercise 2.51.
 ;Unspecified return value
 ```
 测试'square-limit'，结果如图：
-<img src="2051_picture_language_square_limit.png">
+* <img src="2051_picture_language_square_limit.png">
 
 ## Notes
 * 叠加operation，这里是通过修改叠加修改输入的frame实现的(闭包：修改frame得到一个新的frame，而这个frame是operation的参数)。
