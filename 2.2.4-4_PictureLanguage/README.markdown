@@ -121,7 +121,7 @@ Exercise 2.51.
 ```
 
 测试'corner-split'，结果如图：
-<img src="2051_picture_language_below_corner.png">
+* <img src="2051_picture_language_below_corner.png">
 
 ```
 1 ]=> ((square-limit painter-wave 3) f0)
