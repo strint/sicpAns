@@ -1,6 +1,6 @@
 ## SICP
 ![](https://mitpress.mit.edu/sicp/graphics/main-banner.gif)
-###SICP 习题练习
+### SICP 习题练习
 * SICP: http://mitpress.mit.edu/sicp/ 
 * What is SICP about: ~~constructing and interpreting programs~~ Control complexity when building large systems
 * 命名格式为number_description，number的第一个数字表示章，后三位表示在该章的题号，description是题目的关键字 
