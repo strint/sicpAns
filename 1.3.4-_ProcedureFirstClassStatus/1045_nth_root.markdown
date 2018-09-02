@@ -90,7 +90,7 @@ Interrupt option (? for help):
 Interrupt option (? for help): 
 ;Up!
 
-1 ]=> (nth-root 32.0 5 4)
+1 ]=> (nth-root 32.0 5 4) 
 
 ;Value: 2.88042559337537
 
